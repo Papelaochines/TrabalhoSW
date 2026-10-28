@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Desenvolvedor | Web & IA</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#inicio" class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+                        <span class="gradient-text">&lt;Dev/&gt;</span> Portfólio
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Início</a>
+                    <a href="#sobre" class="text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Sobre Mim</a>
+                    <a href="#projetos" class="text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Projetos</a>
+                    <a href="#contato" class="text-sm font-medium hover:text-sky-600 dark:hover:text-sky-400 transition-colors">Contato</a>
+                </nav>
+
+                <!-- Actions: Theme Toggle + Mobile Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" type="button" aria-label="Alternar tema" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        <i id="theme-toggle-dark-icon" class="fas font-solid fa-moon hidden text-lg"></i>
+                        <i id="theme-toggle-light-icon" class="fas font-solid fa-sun text-lg"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-button" type="button" aria-label="Abrir menu" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-slate-50/95 dark:bg-slate-900/95 px-4 pt-2 pb-4 space-y-2">
+            <a href="#inicio" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-200 dark:hover:bg-slate-800">Início</a>
+            <a href="#sobre" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-200 dark:hover:bg-slate-800">Sobre Mim</a>
+            <a href="#projetos" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-200 dark:hover:bg-slate-800">Projetos</a>
+            <a href="#contato" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-200 dark:hover:bg-slate-800">Contato</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow pt-16">
+
+        <!-- HERO SECTION -->
+        <section id="inicio" class="min-h-[calc(100vh-4rem)] flex items-center justify-center relative overflow-hidden py-20">
+            <!-- Background Decorative Glows -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-sky-500/10 dark:bg-sky-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-72 h-72 bg-indigo-500/10 dark:bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-4 text-center z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 text-sm font-semibold tracking-wide uppercase mb-4 border border-sky-200 dark:border-sky-800/50">
+                    👋 Bem-vindo ao meu espaço
+                </span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
+                    Criando soluções digitais <br class="hidden sm:inline">
+                    <span class="gradient-text">eficientes e inovadoras</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+                    Desenvolvedor Web focado em construir interfaces modernas, aplicações funcionais e explorar novas tecnologias como Inteligência Artificial.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#projetos" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold transition-all shadow-lg hover:shadow-sky-500/25 flex items-center justify-center gap-2">
+                        Ver Projetos <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="#contato" class="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold transition-all">
+                        Entrar em Contato
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MIM SECTION -->
+        <section id="sobre" class="py-20 bg-slate-100/60 dark:bg-slate-800/40 border-y border-slate-200 dark:border-slate-800">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Sobre Mim</h2>
+                    <div class="w-16 h-1 bg-sky-600 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Text Side -->
+                    <div class="space-y-4">
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">
+                            Transformando ideias em código funcional
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Olá! Sou um desenvolvedor apaixonado por tecnologia e resolução de problemas. Tenho foco no desenvolvimento Front-End e na integração de sistemas inteligentes para modernizar a experiência do usuário.
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Estou constantemente aprendendo novas tecnologias, praticando boas práticas de clean code, design responsivo e acessibilidade web.
+                        </p>
+                    </div>
+
+                    <!-- Skills Side -->
+                    <div class="space-y-6">
+                        <h4 class="text-lg font-semibold text-slate-900 dark:text-white">Minhas Habilidades</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            
+                            <!-- Skill Item HTML/CSS -->
+                            <div class="p-4 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 flex items-center space-x-3">
+                                <i class="fab fa-html5 text-3xl text-orange-500"></i>
+                                <div>
+                                    <p class="font-semibold text-sm">HTML5 & CSS3</p>
+                                    <p class="text-xs text-slate-500">Estruturação & Estilo</p>
+                                </div>
+                            </div>
+
+                            <!-- Skill Item JS -->
+                            <div class="p-4 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 flex items-center space-x-3">
+                                <i class="fab fa-js text-3xl text-yellow-400"></i>
+                                <div>
+                                    <p class="font-semibold text-sm">JavaScript</p>
+                                    <p class="text-xs text-slate-500">Lógica & Dinamismo</p>
+                                </div>
+                            </div>
+
+                            <!-- Skill Item Tailwind -->
+                            <div class="p-4 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 flex items-center space-x-3">
+                                <i class="fab fa-css3-alt text-3xl text-sky-400"></i>
+                                <div>
+                                    <p class="font-semibold text-sm">Tailwind CSS</p>
+                                    <p class="text-xs text-slate-500">Design Moderno</p>
+                                </div>
+                            </div>
+
+                            <!-- Skill Item Git/Github -->
+                            <div class="p-4 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 flex items-center space-x-3">
+                                <i class="fab fa-github text-3xl text-slate-800 dark:text-white"></i>
+                                <div>
+                                    <p class="font-semibold text-sm">Git & GitHub</p>
+                                    <p class="text-xs text-slate-500">Controle de Versão</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS SECTION -->
+        <section id="projetos" class="py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Projetos em Destaque</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Alguns dos meus trabalhos recentes</p>
+                    <div class="w-16 h-1 bg-sky-600 mx-auto rounded-full mt-2"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project Card 1: BioIA -->
+                    <div class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center p-6 relative overflow-hidden">
+                            <i class="fas fa-dna text-6xl text-white/30 absolute -bottom-4 -right-4 transform group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-robot text-5xl text-white"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">BioIA</h3>
+                                    <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 rounded-full">IA & Saúde</span>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                                    Aplicação de Inteligência Artificial voltada para análise biológica e auxílio em diagnósticos de saúde preventivos.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">Python</span>
+                                    <span class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">JavaScript</span>
+                                    <span class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">HTML/CSS</span>
+                                </div>
+                                <a href="#" onclick="alert('Link do projeto BioIA!')" class="inline-flex items-center text-sm font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700">
+                                    Ver Detalhes <i class="fas fa-external-link-alt ml-1.5 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Web Design & Portal -->
+                    <div class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-gradient-to-tr from-sky-600 to-indigo-500 flex items-center justify-center p-6 relative overflow-hidden">
+                            <i class="fas fa-layer-group text-6xl text-white/30 absolute -bottom-4 -right-4 transform group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-laptop-code text-5xl text-white"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Plataforma Web Design</h3>
+                                    <span class="text-xs font-semibold px-2.5 py-1 bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 rounded-full">Web UI</span>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                                    Interface interativa focada na experiência do usuário (UX/UI), utilizando Tailwind CSS e JavaScript moderno.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">HTML5</span>
+                                    <span class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">Tailwind</span>
+                                    <span class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">JS</span>
+                                </div>
+                                <a href="#" onclick="alert('Link do projeto Web Design!')" class="inline-flex items-center text-sm font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700">
+                                    Ver Detalhes <i class="fas fa-external-link-alt ml-1.5 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Dashboard Interativo -->
+                    <div class="rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+                        <div class="h-48 bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center p-6 relative overflow-hidden">
+                            <i class="fas fa-chart-line text-6xl text-white/30 absolute -bottom-4 -right-4 transform group-hover:scale-110 transition-transform"></i>
+                            <i class="fas fa-chart-pie text-5xl text-white"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Dashboard Analítico</h3>
+                                    <span class="text-xs font-semibold px-2.5 py-1 bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 rounded-full">Painel</span>
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                                    Painel interativo para visualização de dados com relatórios em tempo real e gráficos customizados.
+                                </p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">JavaScript</span>
+                                    <span class="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">CSS Grid</span>
+                                </div>
+                                <a href="#" onclick="alert('Link do Dashboard!')" class="inline-flex items-center text-sm font-semibold text-sky-600 dark:text-sky-400 hover:text-sky-700">
+                                    Ver Detalhes <i class="fas fa-external-link-alt ml-1.5 text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO SECTION -->
+        <section id="contato" class="py-20 bg-slate-100/60 dark:bg-slate-800/40 border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Entre em Contato</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Tem alguma dúvida ou projeto em mente? Fale comigo!</p>
+                    <div class="w-16 h-1 bg-sky-600 mx-auto rounded-full mt-2"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Info Box -->
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 rounded-xl">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-slate-500 dark:text-slate-400 font-medium">E-mail</h4>
+                                <p class="text-slate-900 dark:text-white font-semibold">seuemail@exemplo.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 rounded-xl">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm text-slate-500 dark:text-slate-400 font-medium">Localização</h4>
+                                <p class="text-slate-900 dark:text-white font-semibold">Brasil</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <h4 class="text-sm font-semibold text-slate-900 dark:text-white mb-3">Redes Sociais</h4>
+                            <div class="flex space-x-3">
+                                <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub" class="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 transition-colors">
+                                    <i class="fab fa-linkedin text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="space-y-4 bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Seu E-mail</label>
+                            <input type="email" id="email" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Mensagem</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 px-6 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-semibold transition-colors shadow-md">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-slate-500 dark:text-slate-400 text-sm">
+            <p>© <span id="year"></span> Portfólio. Todos os direitos reservados.</p>
+            <p class="mt-1">Desenvolvido para publicação e trabalho de apresentação.</p>
+        </div>
+    </footer>
+
+    <!-- JS SCRIPTS -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Dark/Light Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Check theme preference in localStorage or system settings
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            darkIcon.classList.remove('hidden');
+        }
+
+        // Toggle action
+        themeToggleBtn.addEventListener('click', function() {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Mobile Navigation Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submit Simulation
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pela mensagem! Ela foi enviada com sucesso (Simulação).');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
